@@ -36,7 +36,7 @@ jobs:
         if: steps.cache.outputs.cache-hit != 'true'
         run: npm ci
       - name: Test code
-        run: exit 1
+        run: npm run test
         id: run-tests
       - name: Upload test report
         if: failure() && steps.run-tests.outcome == 'failure'
